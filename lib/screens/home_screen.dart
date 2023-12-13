@@ -2,6 +2,7 @@ import 'package:curso_flutter/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const name = 'Home';
   const HomeScreen({super.key});
 
   @override
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
                 //   },
                 // ));
 
-                Navigator.pushNamed(context, 'login');
+                Navigator.pushNamed(context, LoginScreen.name);
               },
               child: const Text('Go to LoginScreen'))),
     );

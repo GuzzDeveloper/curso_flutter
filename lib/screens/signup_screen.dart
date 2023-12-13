@@ -2,7 +2,7 @@ import 'package:curso_flutter/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
-  static const name = 'Signup';
+  static const name = 'signUp';
   const SignUpScreen({super.key});
 
   @override
@@ -28,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
                 //   },
                 // ), (route) => false);
                 Navigator.pushNamedAndRemoveUntil(
-                    context, '/', (route) => false);
+                    context, HomeScreen.name, (route) => false);
               },
               child: const Text('Go to HomeScreen'))),
     );
