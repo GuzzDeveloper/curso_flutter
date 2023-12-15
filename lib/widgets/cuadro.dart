@@ -10,7 +10,7 @@ class Cuadro extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 200,
-        width: 50,
+        width: 150,
         padding: padding ?? const EdgeInsets.all(15),
         color: color,
         child: child);
