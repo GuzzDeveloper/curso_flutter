@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
   static const name = 'login';
-  const LoginScreen({super.key});
+  final DateTime? fechaNacimiento;
+  const LoginScreen({super.key, this.fechaNacimiento});
 
   @override
   Widget build(BuildContext context) {
@@ -11,25 +12,32 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('LoginScreen'),
       ),
-      body: Center(
-          child: ElevatedButton(
-              onPressed: () {
-                // Navigator.pushReplacement(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return const HomeScreen();
-                //     },
-                //   ),
-                // );
-                // Navigator.push(context, MaterialPageRoute(
-                //   builder: (context) {
-                //     return const SignUpScreen();
-                //   },
-                // ));
-                Navigator.pushNamed(context, SignUpScreen.name);
-              },
-              child: const Text('Go to SignUpScreen'))),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+              'Tu fecha de nacimiento es:${fechaNacimiento!.add(const Duration(days: 1))}'),
+          Center(
+              child: ElevatedButton(
+                  onPressed: () {
+                    // Navigator.pushReplacement(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return const HomeScreen();
+                    //     },
+                    //   ),
+                    // );
+                    // Navigator.push(context, MaterialPageRoute(
+                    //   builder: (context) {
+                    //     return const SignUpScreen();
+                    //   },
+                    // ));
+                    Navigator.pushNamed(context, SignUpScreen.name);
+                  },
+                  child: const Text('Go to SignUpScreen'))),
+        ],
+      ),
     );
   }
 }
